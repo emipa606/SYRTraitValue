@@ -1,5 +1,8 @@
 # Changelog for SYRTraitValue
 
+1.6.2 - Added loadorder directives to push the mod more to the top of the list
+
+
 1.6.1 - Added patches for RimTraits - General Traits
 Alpha Genes
 Alpha Memes

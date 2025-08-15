@@ -22,6 +22,11 @@
   <loadAfter>
     <li>brrainz.harmony</li>
   </loadAfter>
+  <loadBefore>
+    <li>Mlie.BadCanBeGood</li>
+    <li>Side1iner.TraitsPlus</li>
+    <li>VanillaExpanded.VanillaTraitsExpanded</li>
+  </loadBefore>
   <description>[img]https://i.imgur.com/buuPQel.png[/img]
 Update of Syrchaliss mod https://steamcommunity.com/sharedfiles/filedetails/?id=2451324814
 
@@ -31,7 +36,7 @@ Update of Syrchaliss mod https://steamcommunity.com/sharedfiles/filedetails/?id=
 [img]https://i.imgur.com/pufA0kM.png[/img]
 
 [table]
-    [tr][td][url=https://dsc.gg/mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td] [td][url=https://github.com/emipa606/SYRTraitValue][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
+    [tr][td][url=https://discord.gg/h5TY6DA][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td] [td][url=https://github.com/emipa606/SYRTraitValue][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
     [/tr]
     [tr]
         [td][img]https://i.imgur.com/WjDSfUn.png[/img][/td]
@@ -125,7 +130,7 @@ Collection of my mods for RimWorld
 [list]
 [*] See if the the error persists if you just have this mod and its requirements active.
 [*] If not, try adding your other mods until it happens again.
-[*] Post your error-log using [url=https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib[/url] or the standalone [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader[/url] and command Ctrl+F12
+[*] Post your error-log using the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Log Uploader[/url] or the standalone [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader[/url] and command Ctrl+F12
 [*] For best support, please use the Discord-channel for error-reporting.
 [*] Do not report errors by making a discussion-thread, I get no notification of that.
 [*] If you have the solution for a problem, please post it to the GitHub repository.
@@ -133,5 +138,5 @@ Collection of my mods for RimWorld
 [/list] 
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/3340833768][img]https://img.shields.io/github/v/release/emipa606/SYRTraitValue?label=latest%20version&amp;style=plastic&amp;color=9f1111&amp;labelColor=black[/img][/url] | tags:  trait colors</description>
-  <modVersion IgnoreIfNoMatchingField="True">1.6.1</modVersion>
+  <modVersion IgnoreIfNoMatchingField="True">1.6.2</modVersion>
 </ModMetaData>

@@ -5,10 +5,11 @@
   "SocialImageSet": true,
   "PreviewVersion": "1.6",
   "SearchTags": " trait colors",
-  "LastXmlCleaning": "2025-07-05T16:33:46.4870383+02:00",
+  "LastXmlCleaning": "2025-08-15T21:06:51.5797374+02:00",
   "Patches": true,
   "Defs": false,
   "Assemblies": true,
-  "LinesOfCode": 40109.0,
-  "LinesOfXML": 62038.0
+  "LinesOfCode": 40109,
+  "LinesOfXML": 62038,
+  "CodeBaseSize": 79
 }
