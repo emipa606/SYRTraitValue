@@ -116,11 +116,19 @@ public static class TraitValueUtility
                     }
                 }
 
-                if (!modExtension.traitValues.NullOrEmpty() && !traitDegreeData.label.Contains("<color=#"))
+                if (modExtension.traitValues.NullOrEmpty() || traitDegreeData.label.Contains("<color=#"))
                 {
-                    traitDegreeData.label =
+                    continue;
+                }
+
+                traitDegreeData.label =
+                    $"{ValueColor(modExtension.traitValues.Find(dv => dv.degree == traitDegreeData.degree).value,
+                        out _)}{traitDegreeData.label.CapitalizeFirst()}</color>";
+                if (traitDegreeData.labelFemale != null)
+                {
+                    traitDegreeData.labelFemale =
                         $"{ValueColor(modExtension.traitValues.Find(dv => dv.degree == traitDegreeData.degree).value,
-                            out _)}{traitDegreeData.label.CapitalizeFirst()}</color>";
+                            out _)}{traitDegreeData.labelFemale.CapitalizeFirst()}</color>";
                 }
             }
         }
@@ -137,6 +145,18 @@ public static class TraitValueUtility
                 {
                     // ReSharper disable once StringIndexOfIsCultureSpecific.1
                     degreeData.label = label.Remove(label.IndexOf("<color=#"), 15).Replace("</color>", "");
+                }
+
+                if (degreeData.labelFemale == null)
+                {
+                    continue;
+                }
+
+                var labelFemale = degreeData.labelFemale;
+                if (label.Contains("<color=#"))
+                {
+                    // ReSharper disable once StringIndexOfIsCultureSpecific.1
+                    degreeData.labelFemale = labelFemale.Remove(label.IndexOf("<color=#"), 15).Replace("</color>", "");
                 }
             }
         }

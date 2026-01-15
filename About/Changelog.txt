@@ -1,5 +1,9 @@
 # Changelog for SYRTraitValue
 
+1.6.3 - Some VE and Alpha patches added by slylycan. 
+Now also supports traits with a labelFemale value
+
+
 1.6.2 - Added loadorder directives to push the mod more to the top of the list
 
 
