@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!--Confirm [SYR] Trait Value mod is present-->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>[SYR] Trait Value</li> 
+			<li>[SYR] Trait Value (Continued)</li>
+		</mods>	
+		<!--Confirm Alpha Mechs mod is present-->
+		<match Class="PatchOperationFindMod">
+			<mods>
+				<li>Alpha Mechs</li>
+			</mods>
+			<match Class="PatchOperationSequence">
+				<operations>
+					<li Class="PatchOperationAddModExtension" MayRequire="sarg.alphamechs">
+						<xpath>*/TraitDef[defName = "VFEP_WarcasketTrait_Mech"]</xpath>
+						<value>
+							<li Class="SyrTraitValue.TraitValueExtension">
+								<traitValues>
+									<li>0</li>
+								</traitValues>
+							</li>
+						</value>
+					</li>
+				</operations>
+			</match>
+		</match>
+	</Operation>
+</Patch>
