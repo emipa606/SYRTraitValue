@@ -1,5 +1,8 @@
 # Changelog for SYRTraitValue
 
+1.6.4 - Fixed the new patches
+
+
 1.6.3 - Some VE and Alpha patches added by slylycan. 
 Now also supports traits with a labelFemale value
 
