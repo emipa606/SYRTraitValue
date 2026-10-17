@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	This patch was taken from RimTraits - General Traits
+	and was modified to work with [SYR] Trait Value (Continued).
+	
+	Trait Values were set by those mod authors.
+	
+	Traits added that were missing in the original patch:
+		RT_Messy
+		RT_Tidy
+-->
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>RimTraits - General Traits</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Coordinated"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>20</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Clumsy"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-20</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Hardy"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>20</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Feeble"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-20</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_EasilyAmused"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>20</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_ConstantlyBemused"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-20</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Inquisitive"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>20</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Ignorant"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-20</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Tidy"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Messy"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

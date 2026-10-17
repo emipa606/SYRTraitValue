@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/TraitDef[defName="VME_Elder"]</xpath>
+    <success>Always</success>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>/Defs/TraitDef/TraitDef[defName = "VME_Elder"]</xpath>
+      <value>
+        <li Class="SyrTraitValue.TraitValueExtension">
+          <traitValues>
+            <li>0</li>
+          </traitValues>
+        </li>
+      </value>
+    </match>
+  </Operation>
+</Patch>

@@ -114,7 +114,6 @@ public class TraitValueCore : Mod
             var threshold = Mathf.CeilToInt(traitCount * 0.333f);
             // ReSharper disable once CollectionNeverUpdated.Local
             var buffers = new Dictionary<TraitDegreeData, string>();
-            //if (examplePawn == null) examplePawn = PawnGenerator.GeneratePawn(DefDatabase<PawnKindDef>.AllDefs.First(pkd => pkd == PawnKindDefOf.Drifter), null);
             foreach (var t in TraitValueUtility.AllTraits)
             {
                 foreach (var tdd in t.degreeDatas)
@@ -269,7 +268,7 @@ public class TraitValueCore : Mod
             }
         }
 
-        if (statOffsets)
+        if (statOffsets && tdd.statOffsets != null)
         {
             foreach (var statOffset in tdd.statOffsets)
             {
@@ -279,7 +278,7 @@ public class TraitValueCore : Mod
             }
         }
 
-        if (statFactors)
+        if (statFactors && tdd.statFactors != null)
         {
             foreach (var statFactor in tdd.statFactors)
             {
@@ -289,7 +288,7 @@ public class TraitValueCore : Mod
             }
         }
 
-        if (tdd.hungerRateFactor != 1f)
+        if (!tdd.hungerRateFactor.Equals(1f))
         {
             var hunger = tdd.hungerRateFactor.ToStringByStyle(ToStringStyle.PercentOne, ToStringNumberSense.Factor);
             string value4 = "    " + "HungerRate".Translate() + " " + hunger;
@@ -356,7 +355,7 @@ public class TraitValueCore : Mod
 
         foreach (var t in TraitValueUtility.AllTraits)
         {
-            foreach (var tdd in t.degreeDatas)
+            foreach (var degree in t.degreeDatas.Select(degreeData => degreeData.degree))
             {
                 var modExtension = t.GetModExtension<TraitValueExtension>();
                 if (modExtension == null)
@@ -364,15 +363,15 @@ public class TraitValueCore : Mod
                     continue;
                 }
 
-                var key = $"{t.defName}, {tdd.degree}";
+                var key = $"{t.defName}, {degree}";
                 if (newTraitValues.ContainsKey(key))
                 {
-                    newTraitValues[key] = modExtension.traitValues.Find(dv => dv.degree == tdd.degree).value;
+                    newTraitValues[key] = modExtension.traitValues.Find(dv => dv.degree == degree).value;
                 }
                 else
                 {
-                    newTraitValues.Add($"{t.defName}, {tdd.degree}",
-                        modExtension.traitValues.Find(dv => dv.degree == tdd.degree).value);
+                    newTraitValues.Add($"{t.defName}, {degree}",
+                        modExtension.traitValues.Find(dv => dv.degree == degree).value);
                 }
             }
         }

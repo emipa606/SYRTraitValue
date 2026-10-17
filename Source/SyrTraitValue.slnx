@@ -6,4 +6,30 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="TraitValue/SyrTraitValue.csproj" />
+  <Folder Name="/XML/1.7/Patches/RimTraits - General Traits/">
+    <File Path="../1.7/Patches/RimTraits - General Traits/RT_GT_Patch_TVF_Common.xml" />
+    <File Path="../1.7/Patches/RimTraits - General Traits/RT_GT_Patch_TVF_Rare.xml" />
+    <File Path="../1.7/Patches/RimTraits - General Traits/RT_GT_Patch_TVF_Uncommon.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/english.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Patches/">
+    <File Path="../1.7/Patches/Alpha Genes.xml" />
+    <File Path="../1.7/Patches/Alpha Mechs.xml" />
+    <File Path="../1.7/Patches/Alpha Memes.xml" />
+    <File Path="../1.7/Patches/Big And Small - Framework.xml" />
+    <File Path="../1.7/Patches/Big And Small - Genes &amp; More.xml" />
+    <File Path="../1.7/Patches/Vanilla Factions Expanded - Pirates.xml" />
+    <File Path="../1.7/Patches/Vanilla Fishing Expanded.xml" />
+    <File Path="../1.7/Patches/Vanilla Ideology Expanded - Memes and Structures.xml" />
+    <File Path="../1.7/Patches/Vanilla Psycasts Expanded.xml" />
+    <File Path="../1.7/Patches/Vanilla Races Expanded - Highmate.xml" />
+    <File Path="../1.7/Patches/Vanilla Traits Expanded.xml" />
+    <File Path="../1.7/Patches/VanillaTraitsSingular.xml" />
+    <File Path="../1.7/Patches/VanillaTraitsSpectrum.xml" />
+  </Folder>
 </Solution>

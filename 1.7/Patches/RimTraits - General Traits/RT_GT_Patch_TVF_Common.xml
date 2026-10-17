@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	This patch was taken from RimTraits - General Traits
+	and was modified to work with [SYR] Trait Value (Continued).
+	
+	Trait Values were set by those mod authors.
+-->
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>RimTraits - General Traits</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Nearsighted"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>0</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Farsighted"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>0</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Athletic"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Stiff"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_GoodHygiene"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_PoorHygiene"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Persuasive"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Unconvincing"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Resilient"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>15</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Fragile"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-15</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Energetic"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>15</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Sluggish"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-15</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Restful"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Restless"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Efficient"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Inefficient"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Valiant"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Craven"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Rowdy"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>0</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Composed"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>0</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_HeatTolerant"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_HeatIntolerant"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_ColdTolerant"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_ColdIntolerant"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Muscular"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Frail"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Abstinent"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Ravenous"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-10</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

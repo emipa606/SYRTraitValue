@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	This patch was taken from RimTraits - General Traits
+	and was modified to work with [SYR] Trait Value (Continued).
+	
+	Trait Values were set by those mod authors.
+-->
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>RimTraits - General Traits</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Gifted"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>35</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Incompetent"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-35</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_PatientCook"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>30</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_ImpatientCook"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-30</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_Healthy"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>30</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_ChronicallyIll"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-30</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_TemperatureTolerant"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>30</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName="RT_TemperatureIntolerant"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>-30</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

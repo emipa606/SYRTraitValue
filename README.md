@@ -121,4 +121,4 @@ Collection of my mods for RimWorld
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/SYRTraitValue?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3340833768) | tags: trait colors
+[![Image](https://img.shields.io/github/v/release/emipa606/SYRTraitValue?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3340833768) | trait colors

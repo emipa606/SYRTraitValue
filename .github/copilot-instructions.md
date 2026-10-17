@@ -1,50 +1,54 @@
 # GitHub Copilot Instructions for [SYR] Trait Value (Continued)
 
 ## Mod Overview and Purpose
-
-**[SYR] Trait Value (Continued)** is an update of the original mod by Syrchaliss, designed to assign numerical values to traits in RimWorld that represent their benefit levels. The mod colors traits based on these values, enabling easy identification of trait importance. This system is open for other mod developers to integrate with and make use of the trait values for various interactions and gameplay mechanics.
-
-### Purpose
-- Provide a numerical system for trait evaluation.
-- Facilitate color-coded display of traits for better visual clarity.
-- Allow customization of trait values to fit different player preferences.
+The [SYR] Trait Value (Continued) mod is designed to enhance the customization and visualization of character traits in RimWorld by assigning numerical values to traits. These values represent the beneficial or detrimental nature of each trait. Traits are color-coded based on these values, facilitating player understanding and enabling other modders to integrate these values into their own mods to add unique gameplay elements.
 
 ## Key Features and Systems
-
-- **Trait Value Assignment**: Each trait is assigned a numeric value that indicates its overall benefit. Traits can be adjusted by players for personal balance preferences.
-- **Color Coding**: Properties of traits are shown in distinct colors determined by their numeric values, making it easier to assess character attributes at a glance.
-- **Mod Integration**: Easily integrates with other mod frameworks allowing developers to utilize trait values for customized interactions.
-- **Customization Options**: Players can adjust trait values and disable color coding through in-game settings. Changes require a game restart to apply.
+- **Trait Value System**: Assigns numerical values to traits to indicate their relative impact.
+- **Color-Coding**: Automatically colors traits based on their assigned value, providing a visual representation of a trait's overall benefit or detriment.
+- **Customizability**: Users can adjust trait values via settings to better fit their playstyle, even for traits added by other mods.
+- **Compatibility**: Ensures seamless integration with other trait mods through a load order requirement.
+- **Save Compatibility**: Safely add or remove without affecting save games.
 
 ## Coding Patterns and Conventions
-
-- **C# Class Design**: Utilizes a mix of static and instance classes for modular functionality, including utility and core settings management.
-  - Example Classes: `TraitValueCore`, `TraitValueUtility`, `TraitValueSettings`.
-
-- **XML Data Handling**: Uses custom XML loading for flexible data integration, allowing the mod to read and adjust in-game data seamlessly.
-  - Example: `DegreeValue` class with `LoadDataFromXmlCustom` method.
-
-- **Naming Conventions**: Utilizes clear, descriptive names for classes and methods, adhering to C# coding standards for readability and maintainability.
+- **Consistent Naming**: Follow PascalCase for class and method names. Use meaningful and descriptive names to enhance code readability.
+- **Code Structure**: Organize code into classes that have distinct responsibilities, such as `TraitValueUtility` for value calculation and color handling.
+- **Error Handling**: Include error checking where applicable, especially when dealing with external data sources like XML or mod dependencies.
+- **Logging and Debugging**: Use logging for any potential error spots to aid in debugging.
 
 ## XML Integration
-
-The mod implements XML loading to manage and adjust trait values dynamically. This process allows for streamlined updates and modifications of trait data:
-
-- **DegreeValue Class**: The `LoadDataFromXmlCustom(XmlNode xmlRoot)` method is used for loading trait data from XML configurations, facilitating integration with existing and new trait data.
+The mod uses XML files primarily for defining patches that interact with other mods. Each XML file should be used to define trait values and color settings for specific mods or frameworks. Follow these XML integration guidelines:
+- Ensure XML files are well-structured and validated for RimWorld compatibility.
+- Use patch operations to modify or extend existing XML definitions safely.
+- Separate XML files by functionality or mod it interacts with (e.g., `Alpha Genes.xml`, `Alpha Memes.xml`).
 
 ## Harmony Patching
+Harmony is used for runtime modification of methods to integrate well with the base game and other mods:
+- **Initialization**: Create patches in a static constructor or through a well-defined Harmony entry point.
+- **Target Methods**: Only patch necessary methods and classes to avoid conflicts.
+- **Prefix/Postfix Patterns**: Use prefix patches to modify data before the original method executes and postfix patches for alterations following the original method call.
 
-Harmony is used to create patches that modify the behavior of game code without directly altering the core files:
+## Suggestions for Copilot
+- **Function Templates**: Provide templates for common tasks, such as loading XML data or creating Harmony patches, for well-integrated feature expansion.
+- **Code Snippets**: Suggest code snippets for common C# idioms used in RimWorld modding, including LINQ expressions for data manipulation.
+- **XML Patch Examples**: Offer examples of XML patch structures when dealing with new traits or mod integration.
+- **Debugging Tips**: When Copilot generates new code, suggest logging statements or error checks, especially when integrating new external mod elements.
+- **Compatibility Handling**: Suggest conditional logic for handling specific mod conditions or dependencies to maintain robust compatibility.
 
-- **HarmonyPatches Class**: This static class may include methods to patch existing game methods, ensuring compatibility with other mods and integration with the game.
+By following these guidelines, Copilot can significantly enhance and streamline the development process for the [SYR] Trait Value (Continued) mod. Always ensure suggestions build upon the existing mod structure and adhere to the outlined coding conventions.
 
-### Suggestions for Copilot
+## Project Solution Guidelines
+- Relevant mod XML files are included as Solution Items under the solution folder named XML, these can be read and modified from within the solution.
+- Use these in-solution XML files as the primary files for reference and modification.
+- The `.github/copilot-instructions.md` file is included in the solution under the `.github` solution folder, so it should be read/modified from within the solution instead of using paths outside the solution. Update this file once only, as it and the parent-path solution reference point to the same file in this workspace.
+- When making functional changes in this mod, ensure the documented features stay in sync with implementation; use the in-solution `.github` copy as the primary file.
+- In the solution is also a project called Assembly-CSharp, containing a read-only version of the decompiled game source, for reference and debugging purposes.
+- For any new documentation, update this copilot-instructions.md file rather than creating separate documentation files.
 
-- **Assistive Code Completion**: Leverage Copilot to suggest boilerplate code for XML data loading and Harmony patch creation.
-- **Error Handling**: Utilize suggestions for robust Exception handling in methods, particularly in XML parsing and game code patches.
-- **Customization Setup**: Seek Copilot's help to suggest and streamline the setup of user settings for mod customization via in-game menus.
-- **Mod Integration Guidance**: Ask Copilot for best practices on integrating with other mods, ensuring that new features do not conflict with existing mod mechanics.
 
----
+## Hard rules (must follow)
+- Do NOT run commands that modify the repo (no git commit, git apply, dotnet format) unless explicitly asked.
+- Prefer minimal reads: read only the smallest code region needed (around the suspicious lines).
+- When mentioning SonarQube issues, automatically use the SonarQube MCP service to fetch and address issues instead of making inferred fixes without querying SonarQube first.
+- When mentioning the rimworld log, automatically use the Rimworld MCP service to fetch the log.
 
-This guide aims to provide a comprehensive understanding of the development and integration practices for the [SYR] Trait Value (Continued) mod. For further support, developers are encouraged to engage with the community via Discord, and report any issues via the provided channels.

@@ -27,16 +27,16 @@ public class DegreeValue
             return;
         }
 
-        var array = xmlRoot.FirstChild.Value.Split(',');
-        if (array.Length == 1)
+        var array = xmlRoot.FirstChild?.Value?.Split(',');
+        if (array is { Length: 1 })
         {
             degree = 0;
             value = ParseHelper.FromString<int>(array[0]);
         }
-        else if (array.Length != 2)
+        else if (array is not { Length: 2 })
         {
             Log.ErrorOnce(
-                $"Trait values need two numbers separated by a comma. Or a single number. Wrong value: {xmlRoot.FirstChild.Value}",
+                $"Trait values need two numbers separated by a comma. Or a single number. Wrong value: {xmlRoot.FirstChild?.Value}",
                 16205552);
         }
         else

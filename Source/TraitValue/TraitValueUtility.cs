@@ -45,10 +45,10 @@ public static class TraitValueUtility
                 continue;
             }
 
-            foreach (var traitDegreeData in allTrait.degreeDatas)
+            foreach (var degree in allTrait.degreeDatas.Select(degreeData => degreeData.degree))
             {
-                OriginalTraitValues.Add($"{allTrait.defName}, {traitDegreeData.degree}",
-                    modExtension.traitValues.Find(dv => dv.degree == traitDegreeData.degree).value);
+                OriginalTraitValues.Add($"{allTrait.defName}, {degree}",
+                    modExtension.traitValues.Find(dv => dv.degree == degree).value);
             }
         }
     }
@@ -66,12 +66,10 @@ public static class TraitValueUtility
                 }
                 else
                 {
-                    var modExtension = AllTraits.Find(t => t.defName == key2[0]).GetModExtension<TraitValueExtension>();
-                    if (modExtension != null)
-                    {
-                        modExtension.traitValues.Find(tv => tv.degree == ParseHelper.FromString<int>(key2[1])).value =
-                            originalTraitValue.Value;
-                    }
+                    var modExtension = AllTraits.Find(t => t.defName == key2[0])
+                        ?.GetModExtension<TraitValueExtension>();
+                    modExtension?.traitValues.Find(tv => tv.degree == ParseHelper.FromString<int>(key2[1]))?.value =
+                        originalTraitValue.Value;
                 }
             }
 
@@ -81,12 +79,9 @@ public static class TraitValueUtility
         foreach (var changedTraitValue in TraitValueCore.Instance.Settings.changedTraitValues)
         {
             var key = changedTraitValue.Key.Split(',');
-            var modExtension2 = AllTraits.Find(t => t.defName == key[0]).GetModExtension<TraitValueExtension>();
-            if (modExtension2 != null)
-            {
-                modExtension2.traitValues.Find(tv => tv.degree == ParseHelper.FromString<int>(key[1])).value =
-                    changedTraitValue.Value;
-            }
+            var modExtension2 = AllTraits.Find(t => t.defName == key[0])?.GetModExtension<TraitValueExtension>();
+            modExtension2?.traitValues.Find(tv => tv.degree == ParseHelper.FromString<int>(key[1]))?.value =
+                changedTraitValue.Value;
         }
     }
 
@@ -102,17 +97,16 @@ public static class TraitValueUtility
 
             foreach (var traitDegreeData in allTrait.degreeDatas)
             {
-                foreach (var traitValue in modExtension.traitValues)
+                foreach (var traitValue in modExtension.traitValues.Select(trait => trait.value))
                 {
-                    var value = traitValue.value;
-                    if (value > bestTraitValue)
+                    if (traitValue > bestTraitValue)
                     {
-                        bestTraitValue = value;
+                        bestTraitValue = traitValue;
                     }
 
-                    if (value < worstTraitValue)
+                    if (traitValue < worstTraitValue)
                     {
-                        worstTraitValue = value;
+                        worstTraitValue = traitValue;
                     }
                 }
 
@@ -232,17 +226,16 @@ public static class TraitValueUtility
                         select new DegreeValue(tdd.degree, 0));
                 }
 
-                foreach (var traitValue in modExtension.traitValues)
+                foreach (var traitValue in modExtension.traitValues.Select(tv => tv.value))
                 {
-                    var value = traitValue.value;
-                    if (value > bestTraitValue)
+                    if (traitValue > bestTraitValue)
                     {
-                        bestTraitValue = value;
+                        bestTraitValue = traitValue;
                     }
 
-                    if (value < worstTraitValue)
+                    if (traitValue < worstTraitValue)
                     {
-                        worstTraitValue = value;
+                        worstTraitValue = traitValue;
                     }
                 }
             }
@@ -256,11 +249,18 @@ public static class TraitValueUtility
 
                 try
                 {
-                    allTrait.modExtensions = (allTrait.modExtensions ?? []).Append(
-                        new TraitValueExtension
-                        {
-                            traitValues = allTrait.degreeDatas.Select(tdd => new DegreeValue(tdd.degree, 0)).ToList()
-                        }).ToList();
+                    if (allTrait.degreeDatas != null)
+                    {
+                        allTrait.modExtensions =
+                        [
+                            .. allTrait.modExtensions ?? [],
+                            new TraitValueExtension
+                            {
+                                traitValues = allTrait.degreeDatas.Select(tdd => new DegreeValue(tdd.degree, 0))
+                                    .ToList()
+                            }
+                        ];
+                    }
                 }
                 catch
                 {

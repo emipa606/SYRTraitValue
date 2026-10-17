@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Psycasts Expanded</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>*/TraitDef[defName = "VPE_Thrall"]</xpath>
+          <value>
+            <li Class="SyrTraitValue.TraitValueExtension">
+              <traitValues>
+                <li>0</li>
+              </traitValues>
+            </li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>
